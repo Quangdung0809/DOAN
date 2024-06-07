@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Application ThietKeSan</Name>
+    <Assembly>ThietKeSan.dll</Assembly>
+    <FullClassName>ThietKeSan.App</FullClassName>
+    <ClientId>c052152d-c0e9-4362-a552-6d335e5ecfa6</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

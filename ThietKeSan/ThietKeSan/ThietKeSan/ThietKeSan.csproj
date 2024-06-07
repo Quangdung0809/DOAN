@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21FEFE9E-4792-43EB-83D4-EB4994876D22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThietKeSan</RootNamespace>
+    <AssemblyName>ThietKeSan</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2022\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2022\Revit.exe</StartProgram>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RevitAPI">
+      <HintPath>$(ProgramW6432)\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(ProgramW6432)\Autodesk\Revit 2022\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="cls\clsdanhsachHT.cs" />
+    <Compile Include="cls\clsdanhsachTT.cs" />
+    <Compile Include="cls\clsdanhsachVL.cs" />
+    <Compile Include="cls\clsHoattai.cs" />
+    <Compile Include="cls\clsLopVatLieu.cs" />
+    <Compile Include="cls\clsTinhtai.cs" />
+    <Compile Include="cls\clsSan.cs" />
+    <Compile Include="Command_TM.cs" />
+    <Compile Include="Command_VatLieu.cs" />
+    <Compile Include="Command_TinhThep.cs" />
+    <Compile Include="Command_BoTriThep.cs" />
+    <Compile Include="Command_ThemTaiTrong.cs" />
+    <Compile Include="Command_PickFloor.cs" />
+    <Compile Include="CommonData.cs" />
+    <Compile Include="Data\RevitData.cs" />
+    <Compile Include="Data\SingleData.cs" />
+    <Compile Include="Data\FormData.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_ThuyetMinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_ThuyetMinh.Designer.cs">
+      <DependentUpon>Form_ThuyetMinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_BoTriThep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_BoTriThep.Designer.cs">
+      <DependentUpon>Frm_BoTriThep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_TaiTrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_TaiTrong.Designer.cs">
+      <DependentUpon>Frm_TaiTrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_ThemHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ThemHT.Designer.cs">
+      <DependentUpon>Frm_ThemHT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_ThemLopVatLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ThemLopVatLieu.Designer.cs">
+      <DependentUpon>Frm_ThemLopVatLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_ThemTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ThemTT.Designer.cs">
+      <DependentUpon>Frm_ThemTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_VatLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_VatLieu.Designer.cs">
+      <DependentUpon>Frm_VatLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_ThongTinSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ThongTinSan.Designer.cs">
+      <DependentUpon>Frm_ThongTinSan.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\icons8-save-25.png" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\icon_rebarfloor.jpg" />
+    <None Include="Resources\icons8-cancel-16.png" />
+    <None Include="Resources\icons8-save-16.png" />
+    <None Include="Resources\icons8-remove-16.png" />
+    <None Include="Resources\icons8-add-16.png" />
+    <None Include="Resources\icons8-select-16.png" />
+    <None Include="Resources\icons8-document-16.png" />
+    <None Include="Resources\icons8-refresh-16.png" />
+    <None Include="Resources\icons8-arrange-24.png" />
+    <None Include="Resources\icons8-reinforced-concrete-24.png" />
+    <None Include="Resources\icons8-slab-24.png" />
+    <None Include="Resources\icons8-add-properties-24.png" />
+    <None Include="Resources\icons8-web-analytics-24.png" />
+    <None Include="Resources\contract.png" />
+    <None Include="Resources\word.png" />
+    <None Include="Resources\doc.png" />
+    <None Include="Resources\icons8-word-24.png" />
+    <None Include="Resources\icons8-words-24.png" />
+    <Content Include="ThietKeSan.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_ThuyetMinh.resx">
+      <DependentUpon>Form_ThuyetMinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_BoTriThep.resx">
+      <DependentUpon>Frm_BoTriThep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_TaiTrong.resx">
+      <DependentUpon>Frm_TaiTrong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ThemHT.resx">
+      <DependentUpon>Frm_ThemHT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ThemLopVatLieu.resx">
+      <DependentUpon>Frm_ThemLopVatLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ThemTT.resx">
+      <DependentUpon>Frm_ThemTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ThongTinSan.resx">
+      <DependentUpon>Frm_ThongTinSan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_VatLieu.resx">
+      <DependentUpon>Frm_VatLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if exist "$(AppData)\Autodesk\REVIT\Addins\2022" copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2022"
+if exist "$(AppData)\Autodesk\REVIT\Addins\2022" copy "$(ProjectDir)$(OutputPath)*.rtf" "$(AppData)\Autodesk\REVIT\Addins\2022"
+if exist "$(AppData)\Autodesk\REVIT\Addins\2022" copy "$(ProjectDir)$(OutputPath)*.dll" "$(AppData)\Autodesk\REVIT\Addins\2022"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterClean">
+    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2022\ThietKeSan.addin" />
+    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2022\ThietKeSan.dll" />
+  </Target>
+</Project>
